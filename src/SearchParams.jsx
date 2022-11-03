@@ -6,7 +6,18 @@ const SearchParams = () => {
   const [location, setLocation] = useState("");
   const [animal, setAnimal] = useState("");
   const [breed, setBreed] = useState("");
-  const [pet, setPet] = useState([]);
+  const [pets, setPets] = useState([]);
+
+  useEffect(() => {
+    requestPets();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const requestPets = async () => {
+    const res = await fetch(`http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`);
+    const json = await res.json();
+
+    setPets(json.pets);
+  }
 
   const breeds = [];
 
@@ -38,13 +49,13 @@ const SearchParams = () => {
             }}
           >
             <option />
-              {ANIMALS.map((animal) => {
-                return(
-                  <option key={animal} value={animal}>
+            {ANIMALS.map((animal) => {
+              return (
+                <option key={animal} value={animal}>
                   {animal}
-                  </option>
-                )
-              })}
+                </option>
+              );
+            })}
           </select>
         </label>
 
@@ -62,18 +73,30 @@ const SearchParams = () => {
             }}
           >
             <option />
-              {breeds.map((breed) => {
-                return(
-                  <option key={breed} value={breed}>
+            {breeds.map((breed) => {
+              return (
+                <option key={breed} value={breed}>
                   {breed}
-                  </option>
-                )
-              })}
+                </option>
+              );
+            })}
           </select>
         </label>
 
         <button>Submit</button>
       </form>
+      {
+        pets.map((pet) => {
+          return ( 
+            <Pet 
+              name={pet.name} 
+              animal={pet.animal} 
+              breed={pet.breed}
+              key={pet.id}
+            />
+          )
+        })
+      }
     </div>
   );
 };
