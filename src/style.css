@@ -6,6 +6,7 @@
 body {
   background-color: #81a69b;
   background-image: url(http://pets-images.dev-apis.com/pets/wallpaperB.jpg);
+  /* background-image: url(https://img.freepik.com/premium-vector/seamless-pattern-cute-dog-puppy-symbol-toy-paw-footstep-cartoon-funny-happy-dog-concept-with-simple-shape-style-illustration-background-wallpaper-textile-fabric_253081-200.jpg?w=2000://pets-images.dev-apis.com/pets/wallpaperB.jpg); */
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
