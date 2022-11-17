@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useState } from "react";
 import SearchParams from "./SearchParams.jsx";
-import Details from "./Details.jsx";
-import AdoptedPetContext from "./AdoptedPetContext.js";
+import Details from "./Details.tsx";
+import AdoptedPetContext from "./AdoptedPetContext.ts";
 
 const queryClient = new QueryClient({
   defaultOptions: {
