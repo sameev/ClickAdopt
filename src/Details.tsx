@@ -1,20 +1,28 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { useContext, useState } from "react";
+
 import fetchPet from "./fetchPet";
 import Carousel from "./Carousel";
 import ErrorBoundary from "./ErrorBoundary";
 import Modal from "./Modal";
 import AdoptedPetContext from "./AdoptedPetContext";
 
+import { PetAPIResponse } from "./APIResponsesTypes";
+
 const Details = () => {
+  const { id } = useParams();
+
+  if (!id) {
+    throw new Error("No ID provided to Details");
+  }
+
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
-  // eslint-disable-next-line no-unused-vars
+  const res = useQuery<PetAPIResponse>(["details", id], fetchPet);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, setAdoptedPet] = useContext(AdoptedPetContext);
-  const { id } = useParams();
-  const res = useQuery(["details", id], fetchPet);
-  // console.log("Response in Details Component: ", res);
+  
 
   if (res.isLoading) {
     return (
@@ -24,8 +32,10 @@ const Details = () => {
     );
   }
 
-  const pet = res.data.pets[0];
-  // console.log("pet in Details component: ", pet);
+  const pet = res?.data?.pets[0];
+  if (!pet) {
+    throw new Error("Pet not found.");
+  }
 
   return (
     <div className="details">
@@ -58,10 +68,10 @@ const Details = () => {
   );
 };
 
-export default function DetailsErrorBoundary(props) {
+export default function DetailsErrorBoundary() {
   return (
     <ErrorBoundary>
-      <Details {...props} />
+      <Details />
     </ErrorBoundary>
   );
 }

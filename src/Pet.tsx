@@ -1,6 +1,15 @@
 import { Link } from "react-router-dom";
 
-const Pet = ( {name, animal, breed, images, location, id} ) => {
+interface IProps {
+  name: string;
+  animal: string;
+  breed: string;
+  images: string[];
+  location: string;
+  id: number;
+}
+
+const Pet = ( {name, animal, breed, images, location, id}: IProps ) => {
 
   let hero = "http://pets-images.dev-apis.com/pets/none.jpg";
   if(images.length) {
@@ -17,6 +26,7 @@ const Pet = ( {name, animal, breed, images, location, id} ) => {
         <h2>{`${animal} — ${breed} — ${location}`}</h2>
       </div>
     </Link>
+    
   );
 };
 
