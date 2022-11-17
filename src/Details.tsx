@@ -8,8 +8,6 @@ import ErrorBoundary from "./ErrorBoundary";
 import Modal from "./Modal";
 import AdoptedPetContext from "./AdoptedPetContext";
 
-import { PetAPIResponse } from "./APIResponsesTypes";
-
 const Details = () => {
   const { id } = useParams();
 
@@ -19,7 +17,7 @@ const Details = () => {
 
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
-  const res = useQuery<PetAPIResponse>(["details", id], fetchPet);
+  const res = useQuery(["details", id], fetchPet);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, setAdoptedPet] = useContext(AdoptedPetContext);
   
@@ -33,6 +31,7 @@ const Details = () => {
   }
 
   const pet = res?.data?.pets[0];
+  
   if (!pet) {
     throw new Error("Pet not found.");
   }
