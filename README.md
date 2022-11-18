@@ -1,1 +1,1 @@
-# pet-adoption-site-template
+Click2Adopt ReadME: Coming soon
