@@ -5,11 +5,12 @@
 
 body {
   background-color: #81a69b;
-  background-image: url(http://pets-images.dev-apis.com/pets/wallpaperB.jpg);
-  /* background-image: url(https://img.freepik.com/premium-vector/seamless-pattern-cute-dog-puppy-symbol-toy-paw-footstep-cartoon-funny-happy-dog-concept-with-simple-shape-style-illustration-background-wallpaper-textile-fabric_253081-200.jpg?w=2000://pets-images.dev-apis.com/pets/wallpaperB.jpg); */
+  background-image: url(https://img.freepik.com/premium-vector/seamless-dog-pattern-with-paw-prints-hearts-cat-foot-texture-pattern-with-doggy-pawprint_192280-743.jpg?w=1380);
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
+
 
 .search-params {
   width: 1100px;
@@ -18,7 +19,7 @@ body {
 
 .search-params form {
   border-radius: 6px;
-  background: #faeff0;
+  background: whitesmoke;
   box-shadow: 0px 0px 12px #aaa, -0px -0px 12px #fff;
   width: 360px;
   margin: 0px 25px 0px 0px;
@@ -28,7 +29,7 @@ body {
 
 .search {
   border-radius: 6px;
-  background: #faeff0;
+  background: whitesmoke;
   box-shadow: 0px 0px 12px #aaa, -0px -0px 12px #fff;
   width: 715px;
   padding: 15px;
@@ -42,7 +43,7 @@ body {
   padding: 15px;
   margin-bottom: 25px;
   border-radius: 6px;
-  background: #faeff0;
+  background: whitesmoke;
   box-shadow: 0px 0px 12px #aaa, -0px -0px 12px #fff;
 }
 
@@ -244,7 +245,7 @@ header {
   padding: 15px;
   text-align: center;
   border-radius: 30px;
-  background: #faeff0;
+  background: whitesmoke;
 }
 
 #modal .buttons button {
