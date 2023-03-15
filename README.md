@@ -15,7 +15,7 @@ Once the above is run, navigate to http://localhost:5173.
 
 ### Built With
 + TypeScript
-+ React v18 (Hooks, Router, Context, )
++ React v18 (Hooks, Router, Context, and more)
 + Vite
 + TailwindCSS
 + React Testing Library
