@@ -4,8 +4,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useState } from "react";
 import SearchParams from "./SearchParams.js";
 import Details from "./Details";
-import AdoptedPetContext from "./AdoptedPetContext";
-import { Pet } from "./APIResponsesTypes.js";
+import AdoptedPetContext from "./context/AdoptedPetContext";
+import { Pet } from "./types/APIResponsesTypes.js";
 
 const queryClient = new QueryClient({
   defaultOptions: {

@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import useBreedList from "./useBreedList";
+import useBreedList from "./hooks/useBreedList";
 import Results from "./Results";
-import fetchSearch from "./fetchSearch";
-import AdoptedPetContext from "./AdoptedPetContext";
-import { Animal } from "./APIResponsesTypes";
+import fetchSearch from "./fetches/fetchSearch";
+import AdoptedPetContext from "./context/AdoptedPetContext";
+import { Animal } from "./types/APIResponsesTypes";
 
 const ANIMALS: Animal[] = ["bird", "cat", "dog", "rabbit", "reptile"];
 
@@ -28,7 +28,8 @@ const SearchParams = () => {
           e.preventDefault();
           const formData = new FormData(e.currentTarget);
           const obj = {
-            animal: formData.get("animal")?.toString() as Animal ?? "" as Animal,
+            animal:
+              (formData.get("animal")?.toString() as Animal) ?? ("" as Animal),
             breed: formData.get("breed")?.toString() ?? "",
             location: formData.get("location")?.toString() ?? "",
           };

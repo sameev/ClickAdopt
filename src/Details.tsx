@@ -2,11 +2,11 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { useContext, useState } from "react";
 
-import fetchPet from "./fetchPet";
+import fetchPet from "./fetches/fetchPet";
 import Carousel from "./Carousel";
 import ErrorBoundary from "./ErrorBoundary";
 import Modal from "./Modal";
-import AdoptedPetContext from "./AdoptedPetContext";
+import AdoptedPetContext from "./context/AdoptedPetContext";
 
 const Details = () => {
   const { id } = useParams();
@@ -20,7 +20,6 @@ const Details = () => {
   const res = useQuery(["details", id], fetchPet);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, setAdoptedPet] = useContext(AdoptedPetContext);
-  
 
   if (res.isLoading) {
     return (
@@ -31,7 +30,7 @@ const Details = () => {
   }
 
   const pet = res?.data?.pets[0];
-  
+
   if (!pet) {
     throw new Error("Pet not found.");
   }

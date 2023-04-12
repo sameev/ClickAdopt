@@ -1,6 +1,6 @@
 import { QueryStatus, useQuery } from "@tanstack/react-query";
-import { Animal } from "./APIResponsesTypes";
-import fetchBreedList from "./fetchBreedList";
+import { Animal } from "../types/APIResponsesTypes";
+import fetchBreedList from "../fetches/fetchBreedList";
 
 const useBreedList = (animal: Animal) => {
   const results = useQuery(["breeds", animal], fetchBreedList);
