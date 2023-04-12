@@ -38,6 +38,7 @@ test("gives back breeds with an animal", async () => {
     "Labrador",
     "Husky",
   ];
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   fetch.mockResponseOnce(
     JSON.stringify({
       animal: "dog",

@@ -13,6 +13,7 @@ test("let users click on thumbnails to make them the hero", async () => {
     const image = images[i];
 
     const thumb = await carousel.findByTestId(`thumbnail${i}`);
+    // eslint-disable-next-line @typescript-eslint/await-thenable
     await thumb.click();
 
     expect(hero.src).toContain(image);
