@@ -1,7 +1,7 @@
 import { expect, test } from "vitest";
 import { render } from "@testing-library/react";
 import { StaticRouter } from "react-router-dom/server";
-import Results from "../Results";
+import Results from "../components/Results.tsx";
 
 const pets = [
   {

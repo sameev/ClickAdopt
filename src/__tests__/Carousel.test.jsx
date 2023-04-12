@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
 import { render } from "@testing-library/react";
-import Carousel from "../Carousel.tsx";
+import Carousel from "../components/Carousel.tsx";
 
 test("let users click on thumbnails to make them the hero", async () => {
   const images = ["0.jpg", "1.jpg", "2.jpg", "3.jpg"];
