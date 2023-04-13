@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 
-Once the above is run, navigate to http://localhost:5173.
+Once the above is run, navigate to https://localhost:5173.
 
 ### Built With
 + TypeScript

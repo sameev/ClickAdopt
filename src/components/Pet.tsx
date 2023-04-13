@@ -11,7 +11,7 @@ interface IProps {
 
 const Pet = ( {name, animal, breed, images, location, id}: IProps ) => {
 
-  let hero = "http://pets-images.dev-apis.com/pets/none.jpg";
+  let hero = "https://pets-images.dev-apis.com/pets/none.jpg";
   if(images && images.length) {
     hero = images[0];
   }

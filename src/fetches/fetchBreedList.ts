@@ -11,7 +11,7 @@ const fetchBreedList: QueryFunction<
   if (!animal) return [];
 
   const res = await fetch(
-    `http://pets-v2.dev-apis.com/breeds?animal=${animal}`
+    `https://pets-v2.dev-apis.com/breeds?animal=${animal}`
   );
 
   if (!res.ok) {
