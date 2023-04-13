@@ -7,12 +7,7 @@ const app = express();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-
-
-// Serve up static assets
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
-}
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/'));
@@ -20,5 +15,5 @@ app.get('*', (req, res) => {
 
 
 app.listen(PORT, () => {
-  console.log(`API server running on port ${PORT}!`);
+  (process.env.NODE_ENV !== 'production') && console.log(`Express server running at:\n   http://localhost:${PORT}`)
 })
