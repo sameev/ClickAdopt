@@ -7,5 +7,7 @@ export default defineConfig({
     environment: "happy-dom",
     setupFiles: ['./setupVitest.js']
   },
-  base: '/ClickAdopt/'
+  base: process.env.NODE_ENV === 'production'
+  ? '/ClickAdopt/'
+  : '/',
 })
